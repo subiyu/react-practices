@@ -36,3 +36,4 @@ public/index.html
 <4> Test
 $ npm run test
 
+** 이미 package-lock.json과 package.json이 있다면 npm i만 치면된다.
