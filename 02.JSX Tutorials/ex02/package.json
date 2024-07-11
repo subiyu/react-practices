@@ -1,7 +1,7 @@
 {
-  "name": "ex07",
+  "name": "ex02",
   "version": "1.0.0",
-  "description": "ex00.cra Recofiguration(DIY)",
+  "description": "ex02: 특징II Sigle Root",
   "main": "index.js",
   "scripts": {
     "start": "npx webpack serve  --progress",

@@ -1,7 +1,7 @@
 {
-  "name": "ex07",
+  "name": "ex03",
   "version": "1.0.0",
-  "description": "ex00.cra Recofiguration(DIY)",
+  "description": "ex03: 함수 컴포넌트",
   "main": "index.js",
   "scripts": {
     "start": "npx webpack serve  --progress",

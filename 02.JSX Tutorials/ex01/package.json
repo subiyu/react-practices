@@ -1,7 +1,7 @@
 {
-  "name": "ex07",
+  "name": "ex01",
   "version": "1.0.0",
-  "description": "ex00.cra Recofiguration(DIY)",
+  "description": "ex01: 특징I HTML과의 차이점",
   "main": "index.js",
   "scripts": {
     "start": "npx webpack serve  --progress",
