@@ -2,11 +2,6 @@ import React from 'react';
 import GroceryItem from './GroceryItem';
 
 function GroceryList(props) {
-    $.ajax({
-        success: function() {
-            GroceryList();
-        }
-    })
     return (
         <ol className={'grocery-list'}>
             {/*

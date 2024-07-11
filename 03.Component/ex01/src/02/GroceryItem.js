@@ -1,7 +1,7 @@
 import React from 'react';
 
 function GroceryItem({name, count}) {
-    name += "!!!";
+    //name += "!!!"; 가능
     return (
         <li>
             <strong>{name}</strong>
