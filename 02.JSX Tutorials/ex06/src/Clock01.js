@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Clock(props) {
+function Clock01(props) {
     const now = new Date();
     let hour = now.getHours();
     let min = now.getMinutes();
@@ -25,4 +25,4 @@ function Clock(props) {
     );
 }
 
-export default Clock;
+export default Clock01;
