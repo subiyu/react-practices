@@ -15,7 +15,10 @@ function App() {
     return (
         <div id={'App'}>
             <div className={'tab-box'}>
-                <TabList tabs={tabs}/>
+                <TabList tabs={tabs.map(e => {
+                    const {contents, ...rest} = e;
+                    return rest;
+                })}/>
                 <div>탭뷰입니다.</div>
             </div>
         </div>
