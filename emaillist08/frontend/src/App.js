@@ -1,20 +1,43 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import RegisterForm from './RegisterForm';
-import Searchbar from './Searchbar';
+import SearchBar from './Searchbar';
 import Emaillist from './Emaillist';
+import './assets/scss/App.scss';
 
 function App() {
+    const imgRef = useRef(null);
+    
     const emails = [
-        {no:1, name: '둘리', email: 'dooly@gmail.com'},
-        {no:2, name: '마이콜', email: 'michol@gmail.com'},
-        {no:3, name: '도우너', email: 'douner@gmail.com'},
-        {no:4, name: '또치', email: 'ddochi@gmail.com'}
+        {
+            "no": 1,
+            "firstName": "둘",
+            "lastName": "리",
+            "email": "dooly@gmail.com"
+        },
+        {
+            "no": 2,
+            "firstName": "마",
+            "lastName": "이콜",
+            "email": "michol@gmail.com"
+        },
+        {
+            "no": 3,
+            "firstName": "도",
+            "lastName": "우너",
+            "email": "douner@gmail.com"
+        },
+        {
+            "no": 4,
+            "firstName": "또",
+            "lastName": "치",
+            "email": "ddochi@gmail.com"
+        }
     ];
 
     return (
         <div id='App'>
             <RegisterForm />
-            <Searchbar />
+            <SearchBar />
             <Emaillist emails={emails}/>
         </div>
     );

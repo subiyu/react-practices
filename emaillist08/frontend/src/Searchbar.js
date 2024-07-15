@@ -1,9 +1,9 @@
 import React from 'react';
-import {Search_bar} from './assets/scss/Searchbar.scss';
+import {Search_Bar} from './assets/scss/SearchBar.scss';
 
 function Searchbar(props) {
     return (
-        <div className={Search_bar}>
+        <div className={Search_Bar}>
             <input type='text' placeholder='찾기'/>
         </div>
     );

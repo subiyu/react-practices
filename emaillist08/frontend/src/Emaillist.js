@@ -5,7 +5,11 @@ import EmailItem from './EmailItem';
 function Emaillist({emails}) {
     return (
         <ul className={Email_List}>
-            {emails.map(e => <EmailItem key={e.no} name={e.name} email={e.email} />) }
+            {emails.map(email => <EmailItem key={email.no}
+                                        firstName={email.firstName}
+                                        lastName={email.lastName}
+                                        email={email.email} />) 
+            }
         </ul>
     );
 }
