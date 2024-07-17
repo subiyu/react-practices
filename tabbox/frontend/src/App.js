@@ -1,36 +1,6 @@
-// import React, {useState} from 'react';
-// import TabList from './TabList';
-// import './assets/css/App.css';
-// import tabs from './assets/json/data';
-
-// function App() {
-//     const [activeIndex, setActiveIndex] = useState(0);
-//     return (
-//         <div id={'App'}>
-//             <div className={'tab-box'}>
-//                 <TabList selectTab={(no) => {
-//                     }}
-//                     tabs ={tabs.map((e, i) => {
-//                     const {contents, ...rest} = e;
-                    
-//                     if(i === activeIndex) {
-//                         rest.active = true;
-//                     }
-//                     return rest;
-//                 })}/>
-//                 {/* rest[activeIndex].active = true;
-//                 <TabView contents={tabs[activeIndex].contents} /> */}
-//                 <div>탭뷰입니다.</div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default App;
-
 import React from 'react';
 import TabBox from './TabBox';
-import './assets/css/App.css';
+import './assets/scss/App.scss';
 
 function App(props) {
     const tabs = [
