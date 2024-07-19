@@ -24,7 +24,7 @@ function TabBox() {
                     const {contents, ...rest} = e;
                 
                     if(i === activeIndex) {
-                    rest.active = true;
+                        rest.active = true;
                     }
 
                     return rest;
