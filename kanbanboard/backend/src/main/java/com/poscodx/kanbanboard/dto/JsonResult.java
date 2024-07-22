@@ -25,6 +25,10 @@ public class JsonResult {
 		return message;
 	}
 
+	public static JsonResult taskList(Object data) {
+		return new JsonResult(data);
+	}
+	
 	public static JsonResult success(Object data) {
 		return new JsonResult(data);
 	}
