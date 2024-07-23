@@ -21,17 +21,15 @@ public class TaskRepository {
 	}
 	
 	public int insert(TaskVo vo) {
+		System.out.println(vo);
+		vo.setDone("N");
 		return sqlSession.insert("task.insert", vo);
 	}
 	
 	public int update(TaskVo vo) {
-		if(vo.getDone().equals("Y")) {
-			vo.setDone("N");
-		} else {
-			vo.setDone("Y");
-		}
+		System.out.println(vo);
 		
-		return sqlSession.update("task.update", Map.of("no", vo.getNo(), "done", vo.getNo()));
+		return sqlSession.update("task.update", Map.of("no", vo.getNo(), "done", vo.getDone()));
 	}
 	
 	public int deleteByNo(Long no) {

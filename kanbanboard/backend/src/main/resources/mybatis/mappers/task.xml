@@ -11,7 +11,7 @@
 	<insert id="insert" parameterType="taskvo">
 		<![CDATA[
 		INSERT INTO task
-		VALUES (null, #{name }, #{done })
+		VALUES (null, #{name }, #{done }, #{cardNo })
 		]]>
 		<selectKey keyProperty="no" resultType="long" order="AFTER">
 			<![CDATA[

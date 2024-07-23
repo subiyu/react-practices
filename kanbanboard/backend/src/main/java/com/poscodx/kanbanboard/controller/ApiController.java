@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -47,22 +48,19 @@ public class ApiController {
 	}
 	
 	@PostMapping("/task")
-	public ResponseEntity<JsonResult> createTask(
-			@RequestParam(value="name", required=true, defaultValue="") String name, 
-			@RequestParam(value="no", required=true) Long cardNo) {
+	public ResponseEntity<JsonResult> createTask(@RequestBody TaskVo vo) {
 
-		TaskVo vo = new TaskVo(name, cardNo);
 		log.info("Request[POST /api/task]: " + vo);
-		taskRepository.insert(vo);
+	    taskRepository.insert(vo);
 		
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(JsonResult.success(vo));
 	}
 	
-	@GetMapping("/task")
+	@GetMapping("/task/{no}")
 	public ResponseEntity<JsonResult> getTaskList(
-			@RequestParam(value="no", required=true, defaultValue="1") Long cardNo) {
+			@PathVariable("no") Long cardNo) {
 		
 		List<TaskVo> taskList = taskRepository.findAllByCardNo(cardNo);
 		
@@ -82,10 +80,14 @@ public class ApiController {
 				.body(JsonResult.success(vo));
 	}
 	
-	@DeleteMapping("/task")
-	public void deleteTask(@RequestParam(value="no", required=true) Long no) {
-		log.info("Request[DELETE /api/task]: ");
+	@DeleteMapping("/task/{no}")
+	public ResponseEntity<JsonResult> deleteTask(@PathVariable("no") Long no) {
+		log.info("Request[DELETE /api/task]: " + no);
 		
 		taskRepository.deleteByNo(no);
+		
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body(JsonResult.success(no));
 	}
 }
